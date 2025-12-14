@@ -1,0 +1,49 @@
+{
+  "version": "V2",
+  "ticker": "SPY",
+  "period": {
+    "start": "2018-01-01",
+    "end": "2025-12-13"
+  },
+  "hyperparameters": {
+    "n_trials": 50,
+    "confidence_threshold": 0.52,
+    "stop_loss": 0.03,
+    "take_profit": 0.06
+  },
+  "model_metrics": {
+    "accuracy": 0.5221518987341772,
+    "precision": 0.6226415094339622,
+    "recall": 0.3728813559322034,
+    "f1_score": 0.4664310954063604,
+    "roc_auc": 0.5305857009307808,
+    "high_conf_accuracy": 0.5142857142857142,
+    "high_conf_trades": 175
+  },
+  "backtest_metrics": {
+    "Total Return (%)": 6.56,
+    "Annual Return (%)": 5.21,
+    "Sharpe Ratio": 0.838,
+    "Sortino Ratio": 0.805,
+    "Max Drawdown (%)": -9.17,
+    "Calmar Ratio": 0.569,
+    "Win Rate (%)": 69.23,
+    "Profit Factor": 1.85,
+    "Avg Win ($)": 1606.98,
+    "Avg Loss ($)": 1958.14,
+    "Avg Holding Days": 8.8,
+    "Total Trades": 27,
+    "Round Trips": 13,
+    "Stop Loss Exits": 3,
+    "Take Profit Exits": 1,
+    "Trailing Stop Exits": 1,
+    "Signal Exits": 8
+  },
+  "improvements_over_v1": {
+    "enhanced_rsi_features": true,
+    "regime_detection": true,
+    "hyperparameter_optimization": true,
+    "risk_management": true,
+    "confidence_filtering": true
+  }
+}

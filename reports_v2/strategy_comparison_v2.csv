@@ -1,0 +1,5 @@
+Strategy,Total Return (%),Annual Return (%),Sharpe Ratio,Sortino Ratio,Max Drawdown (%),Calmar Ratio,Win Rate (%),Profit Factor,Avg Win ($),Avg Loss ($),Avg Holding Days,Total Trades,Round Trips,Stop Loss Exits,Take Profit Exits,Trailing Stop Exits,Signal Exits
+AI Multi-Factor V2,6.56,5.21,0.838,0.805,-9.17,0.569,69.23,1.85,1606.98,1958.14,8.8,27,13.0,3.0,1.0,1.0,8.0
+Buy & Hold,24.84,19.43,1.063,,-18.76,,N/A,,,,,1,,,,,
+RSI Only (with stops),0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0
+Momentum Only (with stops),0.0,0.0,0.0,0.0,0.0,0.0,0.0,inf,0.0,0.0,34.7,18,9.0,1.0,2.0,5.0,1.0

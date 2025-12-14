@@ -1,0 +1,392 @@
+[
+  {
+    "signal": "HOLD/SELL",
+    "confidence": 42.1,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.2834,
+        "shap_impact": -0.5278,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 0.7092,
+        "shap_impact": 0.3977,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.121,
+        "shap_impact": 0.3152,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_signal",
+        "value": 0.1165,
+        "shap_impact": 0.2057,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_ratio",
+        "value": 1.2081,
+        "shap_impact": -0.204,
+        "direction": "bearish"
+      }
+    ],
+    "date": "2025-12-01 00:00:00",
+    "trade_id": 0
+  },
+  {
+    "signal": "HOLD/SELL",
+    "confidence": 32.3,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.2756,
+        "shap_impact": -0.5428,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 0.7272,
+        "shap_impact": 0.3609,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.3432,
+        "shap_impact": 0.2793,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_ratio",
+        "value": 1.2083,
+        "shap_impact": -0.2569,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.9303,
+        "shap_impact": 0.1848,
+        "direction": "bullish"
+      }
+    ],
+    "date": "2025-12-02 00:00:00",
+    "trade_id": 1
+  },
+  {
+    "signal": "HOLD/SELL",
+    "confidence": 30.0,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.327,
+        "shap_impact": -0.631,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 0.6693,
+        "shap_impact": 0.3635,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_ratio",
+        "value": 1.1578,
+        "shap_impact": -0.3164,
+        "direction": "bearish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.5585,
+        "shap_impact": 0.2872,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.8914,
+        "shap_impact": 0.2401,
+        "direction": "bullish"
+      }
+    ],
+    "date": "2025-12-03 00:00:00",
+    "trade_id": 2
+  },
+  {
+    "signal": "HOLD/SELL",
+    "confidence": 31.5,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.3718,
+        "shap_impact": -0.6032,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 0.73,
+        "shap_impact": 0.3565,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_ratio",
+        "value": 1.1554,
+        "shap_impact": -0.2968,
+        "direction": "bearish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.6361,
+        "shap_impact": 0.2534,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.8885,
+        "shap_impact": 0.2482,
+        "direction": "bullish"
+      }
+    ],
+    "date": "2025-12-04 00:00:00",
+    "trade_id": 3
+  },
+  {
+    "signal": "HOLD/SELL",
+    "confidence": 31.5,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.4221,
+        "shap_impact": -0.8047,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_20d",
+        "value": 0.1375,
+        "shap_impact": 0.4047,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.8493,
+        "shap_impact": 0.2317,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.6704,
+        "shap_impact": 0.2253,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_ratio",
+        "value": 1.1134,
+        "shap_impact": -0.2113,
+        "direction": "bearish"
+      }
+    ],
+    "date": "2025-12-05 00:00:00",
+    "trade_id": 4
+  },
+  {
+    "signal": "HOLD/SELL",
+    "confidence": 37.0,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.4484,
+        "shap_impact": -0.6777,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 0.6708,
+        "shap_impact": 0.4412,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_20d",
+        "value": 0.1383,
+        "shap_impact": 0.4041,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.4577,
+        "shap_impact": 0.3007,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.8537,
+        "shap_impact": 0.2522,
+        "direction": "bullish"
+      }
+    ],
+    "date": "2025-12-08 00:00:00",
+    "trade_id": 5
+  },
+  {
+    "signal": "BUY",
+    "confidence": 66.7,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.4568,
+        "shap_impact": -0.6961,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_20d",
+        "value": 0.127,
+        "shap_impact": 0.5017,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 0.7158,
+        "shap_impact": 0.4431,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.1918,
+        "shap_impact": 0.2896,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.7835,
+        "shap_impact": 0.2385,
+        "direction": "bullish"
+      }
+    ],
+    "date": "2025-12-09 00:00:00",
+    "trade_id": 6
+  },
+  {
+    "signal": "BUY",
+    "confidence": 68.9,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.4858,
+        "shap_impact": -0.8704,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_20d",
+        "value": 0.1289,
+        "shap_impact": 0.4788,
+        "direction": "bullish"
+      },
+      {
+        "factor": "rsi_ma",
+        "value": 58.3866,
+        "shap_impact": -0.3012,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_regime",
+        "value": 0.7942,
+        "shap_impact": 0.2687,
+        "direction": "bullish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.2305,
+        "shap_impact": 0.2626,
+        "direction": "bullish"
+      }
+    ],
+    "date": "2025-12-10 00:00:00",
+    "trade_id": 7
+  },
+  {
+    "signal": "BUY",
+    "confidence": 79.5,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.5217,
+        "shap_impact": -0.8398,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_20d",
+        "value": 0.1291,
+        "shap_impact": 0.4843,
+        "direction": "bullish"
+      },
+      {
+        "factor": "rsi_ma",
+        "value": 58.9226,
+        "shap_impact": -0.2849,
+        "direction": "bearish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 1.2683,
+        "shap_impact": 0.2766,
+        "direction": "bullish"
+      },
+      {
+        "factor": "rsi_7",
+        "value": 71.0081,
+        "shap_impact": -0.2366,
+        "direction": "bearish"
+      }
+    ],
+    "date": "2025-12-11 00:00:00",
+    "trade_id": 8
+  },
+  {
+    "signal": "BUY",
+    "confidence": 73.3,
+    "base_value": 0.4455,
+    "top_factors": [
+      {
+        "factor": "bb_squeeze",
+        "value": 1.5199,
+        "shap_impact": -0.7848,
+        "direction": "bearish"
+      },
+      {
+        "factor": "volatility_20d",
+        "value": 0.1203,
+        "shap_impact": 0.5443,
+        "direction": "bullish"
+      },
+      {
+        "factor": "volume_ratio",
+        "value": 1.2582,
+        "shap_impact": -0.3281,
+        "direction": "bearish"
+      },
+      {
+        "factor": "macd_histogram",
+        "value": 0.7257,
+        "shap_impact": 0.2736,
+        "direction": "bullish"
+      },
+      {
+        "factor": "rsi_ma",
+        "value": 58.3725,
+        "shap_impact": -0.2624,
+        "direction": "bearish"
+      }
+    ],
+    "date": "2025-12-12 00:00:00",
+    "trade_id": 9
+  }
+]

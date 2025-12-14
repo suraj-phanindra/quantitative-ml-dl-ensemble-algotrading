@@ -1,0 +1,61 @@
+{
+  "ticker": "SPY",
+  "version": "V3",
+  "period": {
+    "start": "2018-01-01",
+    "end": "2025-12-13"
+  },
+  "test_period": {
+    "total_rows": 1723,
+    "train_rows": 1378,
+    "test_rows": 345,
+    "n_features": 131,
+    "test_start": "2024-07-24",
+    "test_end": "2025-12-05"
+  },
+  "hyperparameters": {
+    "n_trials": 50,
+    "confidence_threshold": 0.52,
+    "max_kelly_fraction": 0.5
+  },
+  "model_metrics": {
+    "ticker": "SPY",
+    "accuracy": 0.5362318840579711,
+    "precision": 0.6492146596858639,
+    "recall": 0.5714285714285714,
+    "f1": 0.6078431372549019,
+    "roc_auc": 0.5290538594470047,
+    "sharpe": 2.7558510801904244,
+    "trade_accuracy": 0.6492146596858639,
+    "avg_return_when_trading": 0.4468366603692737,
+    "high_conf_accuracy": 0.5371621621621622,
+    "high_conf_count": "296"
+  },
+  "backtest_metrics": {
+    "total_return_pct": 2.27,
+    "annual_return_pct": 1.66,
+    "sharpe_ratio": 0.751,
+    "sortino_ratio": 0.824,
+    "max_drawdown_pct": -3.16,
+    "calmar_ratio": 0.524,
+    "win_rate_pct": 61.11,
+    "profit_factor": 1.65,
+    "avg_win": 337.45,
+    "avg_loss": 322.2,
+    "avg_holding_days": 7.1,
+    "total_trades": 36,
+    "round_trips": 36,
+    "final_capital": 102269.04,
+    "exit_reasons": {
+      "trailing_stop": 3,
+      "signal": 29,
+      "stop_loss": 4
+    },
+    "kelly_final": 0.152
+  },
+  "benchmark": {
+    "buy_hold_return": 28.62,
+    "buy_hold_sharpe": 1.097,
+    "buy_hold_max_dd": -18.76
+  }
+}

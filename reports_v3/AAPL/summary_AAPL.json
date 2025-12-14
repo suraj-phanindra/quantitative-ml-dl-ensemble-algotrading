@@ -1,0 +1,62 @@
+{
+  "ticker": "AAPL",
+  "version": "V3",
+  "period": {
+    "start": "2018-01-01",
+    "end": "2025-12-13"
+  },
+  "test_period": {
+    "total_rows": 1723,
+    "train_rows": 1378,
+    "test_rows": 345,
+    "n_features": 131,
+    "test_start": "2024-07-24",
+    "test_end": "2025-12-05"
+  },
+  "hyperparameters": {
+    "n_trials": 50,
+    "confidence_threshold": 0.52,
+    "max_kelly_fraction": 0.5
+  },
+  "model_metrics": {
+    "ticker": "AAPL",
+    "accuracy": 0.5014492753623189,
+    "precision": 0.5952380952380952,
+    "recall": 0.3826530612244898,
+    "f1": 0.4658385093167702,
+    "roc_auc": 0.5298246815504725,
+    "sharpe": 4.762600871650508,
+    "trade_accuracy": 0.5952380952380952,
+    "avg_return_when_trading": 1.2535759200275522,
+    "high_conf_accuracy": 0.5033333333333333,
+    "high_conf_count": "300"
+  },
+  "backtest_metrics": {
+    "total_return_pct": 1.59,
+    "annual_return_pct": 1.16,
+    "sharpe_ratio": 0.529,
+    "sortino_ratio": 0.443,
+    "max_drawdown_pct": -1.88,
+    "calmar_ratio": 0.618,
+    "win_rate_pct": 66.67,
+    "profit_factor": 1.83,
+    "avg_win": 469.89,
+    "avg_loss": 512.61,
+    "avg_holding_days": 13.3,
+    "total_trades": 12,
+    "round_trips": 12,
+    "final_capital": 101589.14,
+    "exit_reasons": {
+      "signal": 7,
+      "take_profit": 2,
+      "trailing_stop": 2,
+      "end_of_period": 1
+    },
+    "kelly_final": 0.263
+  },
+  "benchmark": {
+    "buy_hold_return": 28.43,
+    "buy_hold_sharpe": 0.763,
+    "buy_hold_max_dd": -33.36
+  }
+}

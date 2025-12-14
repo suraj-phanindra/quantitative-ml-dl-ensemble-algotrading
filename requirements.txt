@@ -1,0 +1,47 @@
+# ============================================================================
+# AI-Driven Multi-Factor Trading Strategy - Dependencies
+# IIQF CPAIT Batch 2025 Capstone Project
+# ============================================================================
+
+# Data Acquisition & Processing
+yfinance>=0.2.0        # Yahoo Finance market data
+pandas>=1.5.0          # Data manipulation
+numpy>=1.23.0          # Numerical computing
+
+# Technical Analysis
+ta>=0.10.0             # Technical indicators library
+
+# Machine Learning - Core
+scikit-learn>=1.2.0    # ML models, preprocessing, metrics
+
+# Machine Learning - Gradient Boosting (V1, V2, V3)
+xgboost>=1.7.0         # XGBoost (all versions)
+lightgbm>=4.0.0        # LightGBM (V3 stacking ensemble)
+catboost>=1.2.0        # CatBoost (V3 stacking ensemble - optional)
+
+# Deep Learning (V1 only - LSTM)
+tensorflow>=2.12.0     # Keras LSTM model
+
+# Hyperparameter Optimization (V2, V3)
+optuna>=3.0.0          # Bayesian optimization framework
+
+# Model Explainability
+shap>=0.42.0           # SHAP analysis for all versions
+
+# Visualization
+matplotlib>=3.6.0      # Plotting library
+seaborn>=0.12.0        # Statistical visualizations
+plotly>=5.10.0         # Interactive plots
+
+# Utilities
+joblib>=1.2.0          # Model serialization
+tqdm>=4.64.0           # Progress bars
+
+# ============================================================================
+# Installation:
+#   pip install -r requirements.txt
+#
+# Quick install (without optional CatBoost):
+#   pip install yfinance pandas numpy ta scikit-learn xgboost lightgbm \
+#               tensorflow optuna shap matplotlib seaborn plotly joblib tqdm
+# ============================================================================

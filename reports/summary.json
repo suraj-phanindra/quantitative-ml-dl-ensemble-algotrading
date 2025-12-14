@@ -1,0 +1,54 @@
+{
+  "ticker": "SPY",
+  "period": {
+    "start": "2018-01-01",
+    "end": "2025-12-13"
+  },
+  "data_summary": {
+    "total_days": 1999,
+    "start_date": "2018-01-02",
+    "end_date": "2025-12-12",
+    "trading_years": 7.95,
+    "price_stats": {
+      "min_close": 206.11,
+      "max_close": 689.17,
+      "avg_close": 393.51,
+      "std_close": 123.36
+    },
+    "volume_stats": {
+      "avg_volume": 81005636,
+      "max_volume": 392220700
+    },
+    "returns_stats": {
+      "total_return": 186.56,
+      "avg_daily_return": 0.0603,
+      "volatility_annual": 19.5
+    }
+  },
+  "model_metrics": {
+    "accuracy": 0.5769230769230769,
+    "precision": 0.6730769230769231,
+    "recall": 0.6,
+    "f1_score": 0.6344410876132931,
+    "roc_auc": 0.5577863577863578,
+    "win_rate": 57.692307692307686
+  },
+  "backtest_metrics": {
+    "Total Return (%)": 4.81,
+    "Annual Return (%)": 4.25,
+    "Sharpe Ratio": 0.343,
+    "Sortino Ratio": 0.371,
+    "Max Drawdown (%)": -21.03,
+    "Calmar Ratio": 0.202,
+    "Win Rate (%)": 68.18,
+    "Profit Factor": 1.28,
+    "Total Trades": 44,
+    "Avg Trade P&L": 218.83
+  },
+  "benchmark_comparison": {
+    "ai_strategy": 4.81,
+    "buy_hold": 19.39,
+    "rsi_only": 10.4,
+    "momentum_only": 14.5
+  }
+}
