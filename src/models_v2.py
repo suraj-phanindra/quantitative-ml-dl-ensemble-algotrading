@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, RobustScaler
 from sklearn.model_selection import TimeSeriesSplit
+from purged_cv import PurgedTimeSeriesSplit, purged_walk_forward_validation
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.ensemble import RandomForestClassifier
 import xgboost as xgb
@@ -504,34 +505,68 @@ def walk_forward_validation(
     target_column: str = 'target',
     n_splits: int = 5,
     train_size: float = 0.6,
-    n_trials: int = 20
+    n_trials: int = 20,
+    target_horizon: int = 5,
+    embargo_extra: int = 5
 ) -> dict:
     """
-    Walk-forward validation for more robust performance estimation.
+    Walk-forward validation with EMBARGO for more realistic performance estimation.
+
+    This version adds proper temporal gaps to prevent lookahead bias:
+    - Purge: Remove training samples whose target overlaps with test period
+    - Embargo: Add gap between train end and test start
+
+    Args:
+        target_horizon: Number of days used for target calculation (e.g., 5 for 5-day returns)
+        embargo_extra: Additional buffer beyond target_horizon
     """
     results = []
 
     total_len = len(df)
     test_size = (1 - train_size) / n_splits
 
+    # Calculate embargo and purge sizes
+    purge_size = target_horizon
+    embargo_size = target_horizon + embargo_extra
+
+    print(f"\nPurged Walk-Forward Validation:")
+    print(f"  Target horizon: {target_horizon} days")
+    print(f"  Purge size: {purge_size} samples")
+    print(f"  Embargo size: {embargo_size} samples")
+    print(f"  Total train/test gap: {purge_size + embargo_size} samples")
+
     for i in range(n_splits):
-        train_end = int(total_len * (train_size + i * test_size))
+        # Raw train end (before purge)
+        train_end_raw = int(total_len * (train_size + i * test_size))
+
+        # Apply purge: remove samples whose target overlaps with test
+        train_end = train_end_raw - purge_size
+
+        # Test starts after embargo gap
+        test_start = train_end_raw + embargo_size
         test_end = int(total_len * (train_size + (i + 1) * test_size))
 
-        train_df = df.iloc[:train_end]
-        test_df = df.iloc[train_end:test_end]
+        if test_start >= total_len or train_end <= 0:
+            continue
 
-        # Split train into train/val
-        val_split = int(len(train_df) * 0.8)
+        train_df = df.iloc[:train_end]
+        test_df = df.iloc[test_start:test_end]
+
+        # Split train into train/val (with internal embargo)
+        val_split = int(len(train_df) * 0.8) - purge_size
+        val_start = val_split + embargo_size
+
         X_train = train_df[feature_columns].values[:val_split]
         y_train = train_df[target_column].values[:val_split]
-        X_val = train_df[feature_columns].values[val_split:]
-        y_val = train_df[target_column].values[val_split:]
+        X_val = train_df[feature_columns].values[val_start:]
+        y_val = train_df[target_column].values[val_start:]
         X_test = test_df[feature_columns].values
         y_test = test_df[target_column].values
 
         print(f"\n=== Fold {i+1}/{n_splits} ===")
         print(f"Train: {len(X_train)}, Val: {len(X_val)}, Test: {len(X_test)}")
+        print(f"Train period: 0 to {train_end} | Test period: {test_start} to {test_end}")
+        print(f"Gap: {test_start - train_end} samples (prevents lookahead bias)")
 
         # Train ensemble
         ensemble = AdvancedEnsembleV2(n_trials=n_trials, use_lstm=False)  # Skip LSTM for speed
