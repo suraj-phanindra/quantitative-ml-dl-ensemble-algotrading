@@ -11,6 +11,7 @@ Implements:
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import TimeSeriesSplit
+from purged_cv import PurgedTimeSeriesSplit
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
@@ -150,10 +151,14 @@ class TradingOptimizedXGBoost:
         self.best_params = None
 
     def optimize_hyperparameters(self, X_train, y_train, returns_train, volatility_train,
-                                  n_trials=50, n_splits=5):
+                                  n_trials=50, n_splits=5, target_horizon=5):
         """
         Optimize hyperparameters using Sharpe ratio as objective
         Enhanced search space and more CV splits for better generalization
+
+        Uses PurgedTimeSeriesSplit to prevent lookahead bias from:
+        - Autocorrelated samples near train/test boundary
+        - Target leakage from overlapping forward returns
         """
         def objective(trial):
             params = {
@@ -169,8 +174,14 @@ class TradingOptimizedXGBoost:
                 'scale_pos_weight': trial.suggest_float('scale_pos_weight', 0.9, 1.3),
             }
 
-            # Time series cross-validation
-            tscv = TimeSeriesSplit(n_splits=n_splits)
+            # Purged time series CV with embargo to prevent lookahead bias
+            # embargo_td = target_horizon (gap between train end and test start)
+            # purge_td = target_horizon (remove train samples whose labels overlap with test)
+            tscv = PurgedTimeSeriesSplit(
+                n_splits=n_splits,
+                embargo_td=target_horizon,
+                purge_td=target_horizon
+            )
             sharpe_scores = []
 
             for train_idx, val_idx in tscv.split(X_train):
@@ -251,8 +262,12 @@ class TradingOptimizedLightGBM:
         self.best_params = None
 
     def optimize_hyperparameters(self, X_train, y_train, returns_train,
-                                  n_trials=50, n_splits=5):
-        """Optimize using Sharpe ratio with enhanced search space"""
+                                  n_trials=50, n_splits=5, target_horizon=5):
+        """
+        Optimize using Sharpe ratio with enhanced search space
+
+        Uses PurgedTimeSeriesSplit to prevent lookahead bias
+        """
         def objective(trial):
             params = {
                 'n_estimators': trial.suggest_int('n_estimators', 150, 600),
@@ -266,7 +281,12 @@ class TradingOptimizedLightGBM:
                 'reg_lambda': trial.suggest_float('reg_lambda', 0.001, 2, log=True),
             }
 
-            tscv = TimeSeriesSplit(n_splits=n_splits)
+            # Purged CV with embargo
+            tscv = PurgedTimeSeriesSplit(
+                n_splits=n_splits,
+                embargo_td=target_horizon,
+                purge_td=target_horizon
+            )
             sharpe_scores = []
 
             for train_idx, val_idx in tscv.split(X_train):
@@ -324,7 +344,7 @@ class TradingOptimizedCatBoost:
         self.available = CATBOOST_AVAILABLE
 
     def optimize_hyperparameters(self, X_train, y_train, returns_train,
-                                  n_trials=40, n_splits=5):
+                                  n_trials=40, n_splits=5, target_horizon=5):
         if not self.available:
             print("CatBoost not available")
             return None
@@ -340,7 +360,12 @@ class TradingOptimizedCatBoost:
                 'random_strength': trial.suggest_float('random_strength', 0.5, 2.0),
             }
 
-            tscv = TimeSeriesSplit(n_splits=n_splits)
+            # Purged CV with embargo
+            tscv = PurgedTimeSeriesSplit(
+                n_splits=n_splits,
+                embargo_td=target_horizon,
+                purge_td=target_horizon
+            )
             sharpe_scores = []
 
             for train_idx, val_idx in tscv.split(X_train):
